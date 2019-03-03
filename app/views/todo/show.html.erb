@@ -1,3 +1,5 @@
+<body bgcolor = "#38ABAF">
+<h3>Todo #<%= params[:id] %></h3>
 <h1>
   <img class="company-logo" src="https://public.3.basecamp.com/p/iahgNshn1oKq98sWGf1q89Vo/uploads/511042491/download/CodeNow%20Logo.png"></img>
   Workshop Todo List
@@ -5,11 +7,12 @@
 
 <div class="card">
   <input type="checkbox" name=""/>
-  <h2><%= @todo_description %></h2>
+  <h2><font size="110"><%= @todo_description %></font></h2>
   <span class="pomodoro-estimate large-pomodoro-estimate"><%= @todo_pomodoro_estimate %> Pomodoros</span>
   <a href="#" class="button" id="edit-todo-button">Edit</a>
   <a href="#" class="button" id="delete-todo-button">Delete</a>
   <a href="/todo/index" class="simple-link">Go back...</a>
 </div>
 
-<a href="index.html">go back</a>
+<a href="/todo/index">go back</a>
+</body>
