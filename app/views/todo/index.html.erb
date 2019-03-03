@@ -2,15 +2,20 @@
 
 <h1> MY to-dos<%=@list=%></h1>
 <ul>
-    <li><input type= "checkbox"> <a href="show/1"><strike>bus</strike> ride <span class="time_estimate"></span></a> </li>
-    <li><input type= "checkbox"> <a href="show/2">home work <span class="time_estimate"></span></a> </li> 
-    <li><input type= "checkbox"> <a href="show/3">pick up sibblings <span class="time_estimate"></span></a></li>  
-    <li><input type= "checkbox"> <a href="show/4">wash dishes <span class="time_estimate"></span></a></li>
-    <li><input type= "checkbox"> <a href="show/5">clean shoes <span class="time_estimate"></span></a></li>
-    <li><input type= "checkbox">  <a href="show/6"> plan for camping trip<span class="time_estimate"></span></a></li>
-    <li><input type= "checkbox">  <a href="show/7"> buy a bacon egg and cheese and a bev at 5:00pm<span class="time_estimate"></span></a></li>
-<input type= "text" placeholder="Enter a new to-do">
-<input type= "number" placeholder=" how many pomodoros in all">
-<input id="to-do_button" type= "submit" value="submit">
+    <% @todos.each do |todo| %>
+    <li>
+        <input type= "checkbox">
+        <a href="show/<%= todo.id%>">Task = <%= todo.description%> <span class="time_estimate"><%= todo.pomodoro_estimate %> </span></a>
+    </li>
+    <% end %>
+</ul> 
+ 
+ <form action="/todo/create">  
+     <input type= "text" name="description" placeholder="Enter a new to-do">
+     <input type= "number" name="pomodoro_estimate" placeholder=" how many pomodoros in all">
+     <input id="to-do_button" type= "submit" value="submit">
+ </form>
+
+
 <a href="index.html">go back</a>
 </body>

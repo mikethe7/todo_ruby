@@ -9,8 +9,8 @@
   <input type="checkbox" name=""/>
   <h2><font size="110"><%= @todo.description %></font></h2>
   <span class="pomodoro-estimate large-pomodoro-estimate"><%= @todo.pomodoro_estimate %> Pomodoros</span>
-  <a href="#" class="button" id="edit-todo-button">Edit</a>
-  <a href="#" class="button" id="delete-todo-button">Delete</a>
+  <a href="/todo/edit/<%= @todo.id=%>" class="button" id="edit-todo-button">Edit</a>
+  <a href="/todo/destroy/<%= @todo.id %>" class="button delete-todo-button">Delete</a>
   <a href="/todo/index" class="simple-link">Go back...</a>
 </div>
 
